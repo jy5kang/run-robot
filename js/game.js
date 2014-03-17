@@ -11,7 +11,7 @@ myGame.Game.prototype = {
         // robot sprites
         game.load.atlasJSONHash('bot', 'assets/sprites/running_bot.png', 'assets/sprites/running_bot.json');
         // Load the robot sprite
-        this.game.load.image('robot', 'assets/robot.jpg');
+        //this.game.load.image('robot', 'assets/robot.jpg');
         // Load the pipe sprite
         this.game.load.image('pipe', 'assets/space-baddie.png');
     },
