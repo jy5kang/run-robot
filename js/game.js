@@ -10,8 +10,6 @@ myGame.Game.prototype = {
         this.game.load.image('starfield','assets/starfield.jpg');
         // robot sprites
         game.load.atlasJSONHash('bot', 'assets/sprites/running_bot.png', 'assets/sprites/running_bot.json');
-        // Load the robot sprite
-        this.game.load.image('robot', 'assets/robot.jpg');
         // Load the pipe sprite
         this.game.load.image('pipe', 'assets/space-baddie.png');
     },
@@ -28,7 +26,7 @@ myGame.Game.prototype = {
         this.robot.animations.play('run', 15, true);
         
         // Add gravity to the robot to make it fall
-        this.robot.body.gravity.y = 850; 
+        this.robot.body.gravity.y = 950; 
 
         // Call the 'jump' function when the spacekey is hit
         var space_key = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
@@ -37,7 +35,7 @@ myGame.Game.prototype = {
         this.pipes = game.add.group();
         this.pipes.createMultiple(20, 'pipe');
         // Timer that calls 'add_row_of_pipes' ever 1.5 seconds
-        this.timer = this.game.time.events.loop(1500, this.add_row_of_pipes, this);
+        this.timer = this.game.time.events.loop(1400, this.add_row_of_pipes, this);
         // Add a score label on the top left of the screen
         this.score = 0;
         game.score = 0;
@@ -79,7 +77,7 @@ myGame.Game.prototype = {
         // Set the new position of the pipe
         pipe.reset(x, y);
         // Add velocity to the pipe to make it move left
-        pipe.body.velocity.x = -200; 
+        pipe.body.velocity.x = -225; 
         // Kill the pipe when it's no longer visible 
         pipe.outOfBoundsKill = true;
     },
